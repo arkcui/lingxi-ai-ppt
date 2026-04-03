@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵犀互娱平台业务FY27规划分享会</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 50px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+            overflow-y: auto;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .slide:nth-child(odd) { background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); }
+        .slide:nth-child(even) { background: linear-gradient(135deg, #f5f8ff 0%, #fff 100%); }
+        h1 {
+            color: #ff2442;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #ff2442;
+        }
+        .page-tag {
+            display: inline-block;
+            background: #ff2442;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .card-blue { border-left: 4px solid #2196F3; background: #e3f2fd; }
+        .card-purple { border-left: 4px solid #9C27B0; background: #f3e5f5; }
+        .card-green { border-left: 4px solid #4CAF50; background: #f1f8e9; }
+        .card-gold { border-left: 4px solid #FFD700; background: #fff8e1; }
+        .card-kongming { border-left: 4px solid #673AB7; background: #EDE7F6; }
+        h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        ul { list-style: none; padding-left: 0; }
+        li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: #ff2442;
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #ffebee, #fff5f5);
+            border: 2px solid #ff2442;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        .pyramid-level {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+        .pyramid-top {
+            background: linear-gradient(135deg, #ff2442, #d32f2f);
+            width: 40%;
+        }
+        .pyramid-mid1 {
+            background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+            width: 60%;
+        }
+        .pyramid-mid2 {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            width: 80%;
+        }
+        .pyramid-base {
+            background: linear-gradient(135deg, #4CAF50, #388E3C);
+            width: 100%;
+        }
+        .collab-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .collab-box {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .collab-front { background: #e8f5e9; }
+        .collab-ai { background: #fce4ec; }
+        .collab-mid { background: #e3f2fd; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #333;
+            color: white;
+        }
+        .agenda-list {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .agenda-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .agenda-item:last-child { border-bottom: none; }
+        .agenda-num {
+            width: 28px;
+            height: 28px;
+            background: #ff2442;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .xhs-badge {
+            display: inline-block;
+            background: #ff2442;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+        .kongming-tag {
+            display: inline-block;
+            background: #673AB7;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+        .talent-card {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #FF9800;
+        }
+        .era-box {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .do-box {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+        }
+        .dont-box {
+            background: #ffebee;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid #f44336;
+        }
+        .controls {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            padding: 12px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .btn {
+            background: #ff2442;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn:hover { background: #d32f2f; transform: translateY(-2px); }
+        .page-indicator {
+            color: #666;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .nav-hint {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 3rem;
+            cursor: pointer;
+            padding: 20px;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        .nav-hint:hover { color: #ff2442; }
+        .nav-prev { left: 20px; }
+        .nav-next { right: 20px; }
+        .fullscreen-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #ddd;
+            color: #666;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 0.9rem;
+        }
+        .fullscreen-btn:hover { background: #ff2442; color: white; border-color: #ff2442; }
+        @media (max-width: 768px) {
+            .slide { padding: 40px 20px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.4rem; }
+            .card { padding: 20px; }
+            .collab-section { grid-template-columns: 1fr; }
+            .do-dont { grid-template-columns: 1fr; }
+            .nav-hint { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: 封面 -->
+    <div class="slide active">
+        <h1>✨ 灵犀互娱平台业务 ✨</h1>
+        <p class="subtitle">FY27规划分享会</p>
+        
+        <div class="agenda-list" style="margin-top: 20px;">
+            <div class="agenda-item">
+                <span class="agenda-num">①</span>
+                <span>浙大校招复盘：为什么这场打动了人</span>
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-num">②</span>
+                <span>FY27核心考核指标</span>
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-num">③</span>
+                <span>平台业务ASI的实现路径</span>
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-num">④</span>
+                <span>AI时代的光型人才</span>
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-num">⑤</span>
+                <span>组织形态升级的探索目标</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; color: #666;">
+            <p>🎯 <strong>核心主题：</strong>从平台业务到AI原生应用的全面转型</p>
+            <p style="margin-top: 10px;">⏰ <strong>FY27目标：</strong>打造游戏垂类ASI</p>
+        </div>
+        
+        <div class="card card-kongming" style="margin-top: 20px;">
+            <p style="text-align: center; color: #673AB7;">🦊 <strong>数字员工一号 · 孔明</strong> 已就位，全程参与FY27规划</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: 浙大校招复盘（学生反馈放底部） -->
+    <div class="slide">
+        <span class="page-tag">第一页</span>
+        <h2>🔥 浙大校招：为什么这场打动了人</h2>
+        
+        <div class="card card-green">
+            <h3>✨ 成功的三个底层逻辑</h3>
+            <ul>
+                <li><strong>第一层：时代机会的召唤</strong><br>
+                不是"来打工"，是"参与AI重构游戏的历史进程"<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 顶尖人才要的是意义感，不是package</span></li>
+                <li><strong>第二层：热爱者的共鸣</strong><br>
+                面试官懂游戏、爱游戏 → 瞬间建立信任<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 真玩家识别真玩家，当天发出5个Offer</span></li>
+                <li><strong>第三层：共创者的邀请</strong><br>
+                不是"来填坑"，是"来搭建新东西"<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 从"求职者"到"合伙人"的心态转变</span></li>
+            </ul>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明观察 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>这场校招的成功，<strong>本质上是"真诚打败了套路"</strong>。</p>
+            <p style="margin-top: 10px;">在AI时代，<strong>最稀缺的不再是信息，而是判断力与热爱</strong>。</p>
+            <p style="margin-top: 10px; color: #666;">FY27的AI原生团队建设，也要延续这个逻辑：找真正热爱游戏、相信AI的人，给足空间，一起定义未来。</p>
+        </div>
+        
+        <!-- 学生反馈放到底部 -->
+        <div class="highlight-box" style="margin-top: 20px;">
+            <strong>💬 学生真实反馈</strong> <span class="xhs-badge">小红书热帖</span>
+            <p style="margin-top: 8px; color: #666;">"现场组织超棒！面试官特别热情专业！这才是我想加入的公司！"</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: FY27核心考核指标（去掉10%） -->
+    <div class="slide">
+        <span class="page-tag">第二页</span>
+        <h2>🎯 FY27核心考核指标</h2>
+        
+        <h3 style="margin-bottom: 15px;">三大必赢之战</h3>
+        
+        <div style="display: grid; gap: 12px; margin-bottom: 20px;">
+            <div class="card card-green">
+                <strong style="font-size: 1.2rem;">🏆 AI原生应用</strong>
+                <p style="margin-top: 8px;">打造<strong>2-3个</strong>有行业影响力的AI产品</p>
+                <p style="color: #666; font-size: 0.9rem;">用户规模 × 产品口碑 × 技术壁垒</p>
+            </div>
+            
+            <div class="card card-blue">
+                <strong style="font-size: 1.2rem;">💼 前台业务增长</strong>
+                <p style="margin-top: 8px;">九游、交易猫、biubiu <strong>AI赋能提效30%+</strong></p>
+                <p style="color: #666; font-size: 0.9rem;">经营质量 × 市场竞争力 × 用户满意度</p>
+            </div>
+            
+            <div class="card card-purple">
+                <strong style="font-size: 1.2rem;">⚡ 组织战斗力</strong>
+                <p style="margin-top: 8px;"><strong>80%</strong>同学运用AI工具提效</p>
+                <p style="color: #666; font-size: 0.9rem;">人均产出 × 创新速度 × 人才密度</p>
+            </div>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明判断 <span class="kongming-tag">数字员工一号</span></h3>
+            <p><strong>80%的AI工具渗透率</strong>不是终点，是起点。</p>
+            <p style="margin-top: 10px;">真正的挑战在于：如何让AI从"工具"变成"伙伴"，实现<strong>工作方式的重新定义</strong>。</p>
+            <p style="margin-top: 10px; color: #666;">具体能提效多少，还需要我们在实践中摸索。建议设立"AI原生工作流创新奖"，鼓励大家探索人机协同的新范式。</p>
+        </div>
+        
+        <div class="card" style="background: #f8f9fa; margin-top: 15px;">
+            <h3>⏰ FY27时间线</h3>
+            <p><strong>2026 H1</strong>：打基础 → <strong>2026 H2</strong>：见成效 → <strong>2027</strong>：上规模</p>
+            <p style="margin-top: 8px; color: #666;">每个季度有关键里程碑，每半年有阶段成果验收</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: 平台业务ASI的实现路径 -->
+    <div class="slide">
+        <span class="page-tag">第三页</span>
+        <h2>🚀 平台业务ASI的实现路径</h2>
+        
+        <div class="pyramid">
+            <div class="pyramid-level pyramid-top">
+                🔺 ASI（超级智能整合）<br>
+                <small>独立产品形态</small>
+            </div>
+            <div class="pyramid-level pyramid-mid1">
+                🎯 垂直专业Agent<br>
+                <small>分身攻略、AI交易顾问、AI攻略</small>
+            </div>
+            <div class="pyramid-level pyramid-mid2">
+                🌐 通用服务Agent<br>
+                <small>游戏工具、游戏社区</small>
+            </div>
+            <div class="pyramid-level pyramid-base">
+                📱 广泛入口Agent<br>
+                <small>AI-GameID、AI游戏搜索、AI游戏资讯</small>
+            </div>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明设计思路 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>这个金字塔的本质是<strong>"从高频低门槛，到低频高价值"</strong>。</p>
+            <p style="margin-top: 10px;">底层Agent解决"用户怎么找到我们"，上层Agent解决"用户为什么离不开我们"。</p>
+            <p style="margin-top: 10px; color: #666;">建议：底层快速铺开抢入口，上层精雕细琢建壁垒，最终整合成ASI超级入口。</p>
+        </div>
+        
+        <div class="card" style="background: #f5f5f5; margin-top: 15px;">
+            <h3>🤝 三方协同打造</h3>
+            <div class="collab-section">
+                <div class="collab-box collab-front">
+                    <strong>🎮 前台业务</strong><br>
+                    九游/交易猫/biubiu<br>
+                    <small>前期：提供入口与交互</small>
+                </div>
+                <div class="collab-box collab-ai">
+                    <strong>🤖 AI原生团队</strong><br>
+                    2026.3.20成立<br>
+                    <small>AI原生应用开发</small>
+                </div>
+                <div class="collab-box collab-mid">
+                    <strong>⚙️ 中台业务</strong><br>
+                    市场/技术/用增<br>
+                    <small>基础设施支持</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: AI时代的光型人才（T→π→光 时代演变） -->
+    <div class="slide">
+        <span class="page-tag">第四页</span>
+        <h2>💡 AI时代的光型人才</h2>
+        
+        <h3 style="margin-bottom: 15px;">时代演变：人才形态的三次进化</h3>
+        
+        <div class="era-box" style="border-left: 4px solid #607D8B;">
+            <h3>🔧 T型人才（工业时代）</h3>
+            <p><strong>一专多能：</strong>在一个领域钻得深，其他领域懂得广</p>
+            <p style="color: #666; margin-top: 5px;">特点：标准化、专业化、分工明确</p>
+        </div>
+        
+        <div class="era-box" style="border-left: 4px solid #2196F3;">
+            <h3>🌐 π型人才（信息时代）</h3>
+            <p><strong>双专多能：</strong>在两个领域都有深度，能跨界整合</p>
+            <p style="color: #666; margin-top: 5px;">特点：跨界、整合、连接不同领域</p>
+        </div>
+        
+        <div class="era-box" style="border-left: 4px solid #FFD700; background: linear-gradient(135deg, #fff8e1, #fff);">
+            <h3>✨ 光型人才（AI时代）</h3>
+            <p><strong>穿透+连接+进化：</strong>穿透信息迷雾，连接人与AI，持续进化学习</p>
+            <p style="color: #666; margin-top: 5px;">特点：判断力、创造力、连接力、学习力</p>
+        </div>
+        
+        <div class="card card-kongming" style="margin-top: 15px;">
+            <h3>🦊 孔明判断：AI时代光型人才的<strong>要与不要</strong> <span class="kongming-tag">数字员工一号</span></h3>
+            
+            <div class="do-dont">
+                <div class="do-box">
+                    <strong style="color: #4CAF50;">✅ 要</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>对游戏真正的热爱</li>
+                        <li>对AI敏锐的嗅觉</li>
+                        <li>持续创新的hunger</li>
+                        <li>穿透信息的判断力</li>
+                        <li>人机协作的连接力</li>
+                    </ul>
+                </div>
+                <div class="dont-box">
+                    <strong style="color: #f44336;">❌ 不要</strong>
+                    <ul style="margin-top: 8px;">
+                        <li>只会执行，不会思考</li>
+                        <li>守着技能，拒绝进化</li>
+                        <li>被动等待，不主动探索</li>
+                        <li>只看眼前，不看趋势</li>
+                        <li>单打独斗，不擅连接</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="margin-top: 15px;"><strong>FY27招募标准：</strong>不是"会AI的人"，而是"像光一样的人"。</p>
+            <p style="margin-top: 8px; color: #666;">这样的人，AI是放大器，不是替代者。</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: 组织形态升级 -->
+    <div class="slide">
+        <span class="page-tag">第五页</span>
+        <h2>⚡ 组织形态升级的探索目标</h2>
+        
+        <div class="card card-blue">
+            <h3>🎯 目标一：数字员工计划</h3>
+            <p>基于AI时代光型人才要求，由<strong>中台联手</strong>共同开发数字员工计划</p>
+            <ul style="margin-top: 10px;">
+                <li>为在岗及新人提供<strong>即插即用</strong>的咨询、分析类服务Agent群组</li>
+                <li>降低专业门槛，提升全员AI素养与工作效率</li>
+            </ul>
+        </div>
+        
+        <div class="card card-green">
+            <h3>🚀 目标二：一人即组织</h3>
+            <p>朝着<strong>"一人即组织"</strong>的形态演进</p>
+            <ul style="margin-top: 10px;">
+                <li>鼓励光型人才打开想象力</li>
+                <li>开发更多游戏垂类AI原生应用</li>
+                <li>个体创造力 × AI工具 = 无限可能</li>
+            </ul>
+        </div>
+        
+        <div class="card card-gold">
+            <h3>💡 目标三：项目分级投资体系</h3>
+            <p>参考创业公司融资逻辑，建立项目分级评估与资源注入机制</p>
+            
+            <div style="margin-top: 15px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 8px;">
+                    <strong>🌱 天使轮</strong><br>
+                    <small>想法验证期<br>小额资源试水</small>
+                </div>
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 8px;">
+                    <strong>📈 A轮</strong><br>
+                    <small>MVP验证期<br>匹配专项资源</small>
+                </div>
+                <div style="background: #f3e5f5; padding: 10px; border-radius: 8px;">
+                    <strong>🚀 B轮</strong><br>
+                    <small>规模化扩张<br>中台全面支持</small>
+                </div>
+                <div style="background: #fff3e0; padding: 10px; border-radius: 8px;">
+                    <strong>👑 C轮</strong><br>
+                    <small>行业标杆确立<br>战略级资源配置</small>
+                </div>
+            </div>
+            
+            <p style="margin-top: 15px; color: #666;">
+                <strong>核心原则：</strong>每个阶段评估项目生死，动态调整资源注入多少
+            </p>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明总结 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>数字员工是<strong>基础设施</strong>，光型人才是<strong>核心资产</strong>，融资轮次体系是<strong>筛选机制</strong>。</p>
+            <p style="margin-top: 10px;">三者合一，才能让FY27从"规划"变成"现实"。</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">🔥 FY27，一起打造游戏垂类ASI！ 🔥</p>
+        <p>灵犀互娱平台业务 · FY27规划分享会</p>
+    </div>
+    <div class=\"nav-hint nav-prev\" onclick=\"prevSlide()\">‹</div>
+    <div class=\"nav-hint nav-next\" onclick=\"nextSlide()\">›</div>
+    <div class=\"controls\">
+        <button class=\"btn\" onclick=\"prevSlide()\">◀ 上一页</button>
+        <span class=\"page-indicator\"><span id=\"current\">1</span> / <span id=\"total\">6</span></span>
+        <button class=\"btn\" onclick=\"nextSlide()\">下一页 ▶</button>
+    </div>
+    <button class=\"fullscreen-btn\" onclick=\"toggleFullscreen()\">⛶ 全屏</button>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        document.getElementById('total').textContent = totalSlides;
+        
+        function showSlide(n) {
+            slides.forEach(s => s.classList.remove('active'));
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current').textContent = currentSlide + 1;
+        }
+        
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        
+        document.addEventListener('keydown', (e) => {
+            if(e.key==='ArrowRight' || e.key===' ' || e.key==='PageDown') nextSlide();
+            if(e.key==='ArrowLeft' || e.key==='PageUp') prevSlide();
+        });
+        
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+        document.addEventListener('touchend', (e) => {
+            let touchEndX = e.changedTouches[0].screenX;
+            if(touchStartX - touchEndX > 50) nextSlide();
+            if(touchEndX - touchStartX > 50) prevSlide();
+        });
+        
+        function toggleFullscreen() {
+            if(!document.fullscreenElement) document.documentElement.requestFullscreen();
+            else document.exitFullscreen();
+        }
+    </script>
+</body>
+</html>
