@@ -6,38 +6,41 @@
     <title>灵犀互娱平台业务FY27规划分享会</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; background: #faf9f7; }
+        html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 50%, #f0f4f8 100%); }
         .slideshow { width: 100%; height: 100%; position: relative; }
-        .slide { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 100px; opacity: 0; visibility: hidden; transition: opacity 0.6s ease; }
-        .slide.active { opacity: 1; visibility: visible; }
-        h1 { color: #2c3e50; font-size: 3.2rem; text-align: center; margin-bottom: 15px; font-weight: 300; letter-spacing: 2px; }
-        h2 { color: #5d6d7e; font-size: 2rem; margin-bottom: 40px; text-align: center; font-weight: 400; }
-        h3 { color: #7f8c8d; font-size: 1.1rem; margin-bottom: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { color: #95a5a6; font-size: 1.3rem; text-align: center; margin-bottom: 50px; font-weight: 300; }
-        .card { background: #ffffff; border-radius: 16px; padding: 35px 40px; margin: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); max-width: 850px; width: 100%; border: 1px solid rgba(0,0,0,0.06); }
-        .card-green { border-left: 4px solid #a8e6cf; }
-        .card-blue { border-left: 4px solid #a8d8ea; }
-        .card-purple { border-left: 4px solid #d4a5d4; }
-        .card-gold { border-left: 4px solid #ffd3b6; }
-        .card-kongming { border-left: 4px solid #b4a7d6; background: #faf8ff; }
-        p, li { color: #5d6d7e; font-size: 1.05rem; line-height: 1.9; }
+        .slide { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 100px; opacity: 0; visibility: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform: translateY(20px); }
+        .slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        h1 { color: #2d3748; font-size: 3rem; text-align: center; margin-bottom: 15px; font-weight: 600; letter-spacing: 1px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        h2 { color: #4a5568; font-size: 2.2rem; margin-bottom: 35px; text-align: center; font-weight: 500; }
+        h3 { color: #718096; font-size: 0.95rem; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: #a0aec0; font-size: 1.25rem; text-align: center; margin-bottom: 45px; font-weight: 400; }
+        .card { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); border-radius: 24px; padding: 35px 45px; margin: 12px 0; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.07), 0 2px 8px rgba(31, 38, 135, 0.04); max-width: 880px; width: 100%; border: 1px solid rgba(255,255,255,0.8); position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); }
+        .card-green { border-left: 5px solid #48bb78; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(72, 187, 120, 0.08) 100%); }
+        .card-blue { border-left: 5px solid #4299e1; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(66, 153, 225, 0.08) 100%); }
+        .card-purple { border-left: 5px solid #9f7aea; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(159, 122, 234, 0.08) 100%); }
+        .card-gold { border-left: 5px solid #ed8936; background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(237, 137, 54, 0.08) 100%); }
+        .card-kongming { border-left: 5px solid #667eea; background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(102, 126, 234, 0.1) 100%); }
+        p, li { color: #4a5568; font-size: 1.05rem; line-height: 1.9; }
         ul { list-style: none; }
-        li { padding: 10px 0; padding-left: 28px; position: relative; }
-        li:before { content: "—"; color: #b8b8b8; position: absolute; left: 0; font-weight: 300; }
-        .controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 1000; background: rgba(255,255,255,0.9); padding: 12px 25px; border-radius: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); }
-        .btn { background: #f0f0f0; border: none; color: #5d6d7e; padding: 10px 22px; border-radius: 20px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s; }
-        .btn:hover { background: #e8e8e8; color: #2c3e50; }
-        .page-indicator { color: #95a5a6; display: flex; align-items: center; padding: 0 20px; font-size: 0.95rem; }
-        .nav-hint { position: fixed; top: 50%; transform: translateY(-50%); color: #d0d0d0; font-size: 2.5rem; cursor: pointer; padding: 30px 20px; transition: all 0.3s; }
-        .nav-hint:hover { color: #95a5a6; }
-        .nav-prev { left: 10px; }
-        .nav-next { right: 10px; }
-        .fullscreen-btn { position: fixed; top: 25px; right: 25px; background: rgba(255,255,255,0.8); border: 1px solid #e0e0e0; color: #7f8c8d; padding: 10px 18px; border-radius: 8px; cursor: pointer; z-index: 1000; font-size: 0.85rem; }
-        .tag { display: inline-block; background: #f0f0f0; color: #7f8c8d; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; margin-left: 10px; }
-        .agenda-item { padding: 18px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; color: #5d6d7e; font-size: 1.1rem; }
+        li { padding: 12px 0; padding-left: 30px; position: relative; }
+        li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 1000; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); padding: 14px 28px; border-radius: 50px; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1); border: 1px solid rgba(255,255,255,0.6); }
+        .btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.3s; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4); }
+        .page-indicator { color: #718096; display: flex; align-items: center; padding: 0 25px; font-size: 0.95rem; font-weight: 500; }
+        .nav-hint { position: fixed; top: 50%; transform: translateY(-50%); color: #cbd5e0; font-size: 2.5rem; cursor: pointer; padding: 30px 20px; transition: all 0.3s; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .nav-hint:hover { color: #667eea; background: rgba(102, 126, 234, 0.1); }
+        .nav-prev { left: 20px; }
+        .nav-next { right: 20px; }
+        .fullscreen-btn { position: fixed; top: 25px; right: 25px; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.6); color: #718096; padding: 12px 20px; border-radius: 12px; cursor: pointer; z-index: 1000; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s; }
+        .fullscreen-btn:hover { background: rgba(255,255,255,0.95); color: #667eea; }
+        .agenda-item { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; color: #4a5568; font-size: 1.15rem; transition: all 0.3s; }
         .agenda-item:last-child { border-bottom: none; }
-        .agenda-num { width: 32px; height: 32px; background: #f0f0f0; color: #7f8c8d; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; margin-right: 15px; }
-        @media (max-width: 768px) { .slide { padding: 40px 25px; } h1 { font-size: 2rem; } h2 { font-size: 1.4rem; } .card { padding: 25px; } .nav-hint { display: none; } }
+        .agenda-item:hover { transform: translateX(5px); }
+        .agenda-num { width: 36px; height: 36px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; margin-right: 18px; font-weight: 600; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+        .highlight-num { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @media (max-width: 768px) { .slide { padding: 40px 25px; } h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } .card { padding: 25px; } .nav-hint { display: none; } }
     </style>
 </head>
 <body>
@@ -46,15 +49,15 @@
         <div class="slide active">
             <h1>灵犀互娱平台业务</h1>
             <p class="subtitle">FY27规划分享会</p>
-            <div class="card" style="max-width: 550px;">
+            <div class="card" style="max-width: 580px;">
                 <div class="agenda-item"><span class="agenda-num">①</span>浙大校招复盘：为什么这场打动了人</div>
                 <div class="agenda-item"><span class="agenda-num">②</span>FY27核心考核指标</div>
                 <div class="agenda-item"><span class="agenda-num">③</span>平台业务ASI的实现路径</div>
                 <div class="agenda-item"><span class="agenda-num">④</span>AI时代的光型人才</div>
                 <div class="agenda-item"><span class="agenda-num">⑤</span>组织形态升级的探索目标</div>
             </div>
-            <p style="color:#7f8c8d;margin-top:40px;font-size:1.1rem;">从平台业务到AI原生应用的全面转型</p>
-            <p style="color:#d4a5d4;margin-top:10px;font-size:1.05rem;">FY27目标：打造游戏垂类ASI</p>
+            <p style="color:#718096;margin-top:45px;font-size:1.1rem;">从平台业务到AI原生应用的全面转型</p>
+            <p style="margin-top:15px;font-size:1.2rem;font-weight:600;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">FY27目标：打造游戏垂类ASI</p>
         </div>
         
         <div class="slide">
@@ -62,80 +65,100 @@
             <div class="card card-green">
                 <h3>成功的三个底层逻辑</h3>
                 <ul>
-                    <li><strong style="color:#27ae60;">时代机会的召唤</strong> — 参与AI重构游戏的历史进程</li>
-                    <li><strong style="color:#27ae60;">热爱者的共鸣</strong> — 面试官懂游戏爱游戏，当天发5个Offer</li>
-                    <li><strong style="color:#27ae60;">共创者的邀请</strong> — 从求职者到合伙人的心态转变</li>
+                    <li><strong style="color:#38a169;">时代机会的召唤</strong> — 参与AI重构游戏的历史进程</li>
+                    <li><strong style="color:#38a169;">热爱者的共鸣</strong> — 面试官懂游戏爱游戏，当天发5个Offer</li>
+                    <li><strong style="color:#38a169;">共创者的邀请</strong> — 从求职者到合伙人的心态转变</li>
                 </ul>
             </div>
             <div class="card card-kongming">
-                <p><strong>孔明观察：</strong>本质上是"真诚打败了套路"。AI时代最稀缺的是<strong style="color:#8e7cc3;">判断力与热爱</strong>。</p>
+                <p><strong style="color:#667eea;">孔明观察：</strong>本质上是"真诚打败了套路"。AI时代最稀缺的是<strong style="color:#764ba2;">判断力与热爱</strong>。</p>
             </div>
         </div>
         
         <div class="slide">
             <h2>FY27核心考核指标</h2>
-            <div class="card card-green">
-                <h3>AI原生应用</h3>
-                <p>打造<strong style="color:#27ae60;">2-3个</strong>有行业影响力的AI产品</p>
+            <div style="display:flex;gap:25px;max-width:1000px;width:100%;">
+                <div class="card card-green" style="flex:1;text-align:center;">
+                    <span class="highlight-num">2-3</span>
+                    <p style="color:#718096;margin-top:10px;font-size:0.9rem;">AI原生产品</p>
+                </div>
+                <div class="card card-blue" style="flex:1;text-align:center;">
+                    <span class="highlight-num">30%+</span>
+                    <p style="color:#718096;margin-top:10px;font-size:0.9rem;">AI提效</p>
+                </div>
+                <div class="card card-purple" style="flex:1;text-align:center;">
+                    <span class="highlight-num">80%</span>
+                    <p style="color:#718096;margin-top:10px;font-size:0.9rem;">AI工具渗透</p>
+                </div>
             </div>
-            <div class="card card-blue">
-                <h3>前台业务增长</h3>
-                <p>九游、交易猫、biubiu <strong style="color:#3498db;">AI赋能提效30%+</strong></p>
-            </div>
-            <div class="card card-purple">
-                <h3>组织战斗力</h3>
-                <p><strong style="color:#9b59b6;">80%</strong>同学运用AI工具提效</p>
+            <div class="card card-kongming" style="margin-top:25px;">
+                <p><strong style="color:#667eea;">80%不是终点是起点</strong>。让AI从"工具"变"伙伴"，<strong style="color:#764ba2;">重新定义工作方式</strong>。</p>
             </div>
         </div>
         
         <div class="slide">
             <h2>平台业务ASI的实现路径</h2>
-            <div class="card">
-                <p style="text-align:center;color:#e74c3c;font-size:1.2rem;margin-bottom:15px;">ASI 超级智能整合</p>
-                <p style="text-align:center;color:#9b59b6;margin:12px 0;">垂直专业：分身攻略、AI交易顾问、AI攻略</p>
-                <p style="text-align:center;color:#3498db;margin:12px 0;">通用服务：游戏工具、游戏社区</p>
-                <p style="text-align:center;color:#27ae60;">广泛入口：AI-GameID、AI游戏搜索、AI游戏资讯</p>
+            <div class="card" style="padding:45px;">
+                <div style="display:flex;flex-direction:column;gap:15px;">
+                    <div style="background:linear-gradient(135deg,#e53e3e 0%,#c53030 100%);color:white;padding:18px 30px;border-radius:12px;text-align:center;font-weight:600;box-shadow:0 4px 15px rgba(229,62,62,0.3);">🔺 ASI 超级智能整合</div>
+                    <div style="background:linear-gradient(135deg,#805ad5 0%,#6b46c1 100%);color:white;padding:16px 30px;border-radius:12px;text-align:center;box-shadow:0 4px 15px rgba(128,90,213,0.25);">🎯 垂直专业：分身攻略、AI交易顾问、AI攻略</div>
+                    <div style="background:linear-gradient(135deg,#3182ce 0%,#2c5282 100%);color:white;padding:16px 30px;border-radius:12px;text-align:center;box-shadow:0 4px 15px rgba(49,130,206,0.25);">🌐 通用服务：游戏工具、游戏社区</div>
+                    <div style="background:linear-gradient(135deg,#38a169 0%,#276749 100%);color:white;padding:16px 30px;border-radius:12px;text-align:center;box-shadow:0 4px 15px rgba(56,161,105,0.25);">📱 广泛入口：AI-GameID、AI游戏搜索、AI游戏资讯</div>
+                </div>
             </div>
-            <p style="color:#95a5a6;margin-top:25px;text-align:center;">前台业务 + AI原生团队 + 中台业务 三方协同</p>
+            <p style="color:#718096;margin-top:25px;text-align:center;">🎮 前台业务 + 🤖 AI原生团队 + ⚙️ 中台业务 三方协同</p>
         </div>
         
         <div class="slide">
             <h2>AI时代的光型人才</h2>
-            <div style="display:flex;gap:20px;max-width:900px;width:100%;margin-bottom:20px;">
-                <div class="card" style="flex:1;text-align:center;padding:25px;">
-                    <p style="color:#95a5a6;font-size:2rem;margin-bottom:10px;">🔧</p>
-                    <p style="color:#7f8c8d;font-size:0.9rem;">T型<br>工业时代</p>
+            <div style="display:flex;gap:20px;max-width:950px;width:100%;margin-bottom:25px;">
+                <div class="card" style="flex:1;text-align:center;padding:30px 20px;opacity:0.7;">
+                    <p style="font-size:2.5rem;margin-bottom:15px;">🔧</p>
+                    <p style="color:#a0aec0;font-weight:600;">T型</p>
+                    <p style="color:#a0aec0;font-size:0.85rem;margin-top:5px;">工业时代</p>
                 </div>
-                <div class="card" style="flex:1;text-align:center;padding:25px;">
-                    <p style="color:#95a5a6;font-size:2rem;margin-bottom:10px;">🌐</p>
-                    <p style="color:#7f8c8d;font-size:0.9rem;">π型<br>信息时代</p>
+                <div class="card" style="flex:1;text-align:center;padding:30px 20px;opacity:0.85;">
+                    <p style="font-size:2.5rem;margin-bottom:15px;">🌐</p>
+                    <p style="color:#718096;font-weight:600;">π型</p>
+                    <p style="color:#718096;font-size:0.85rem;margin-top:5px;">信息时代</p>
                 </div>
-                <div class="card" style="flex:1;text-align:center;padding:25px;background:#fffbf5;">
-                    <p style="color:#f39c12;font-size:2rem;margin-bottom:10px;">✨</p>
-                    <p style="color:#2c3e50;font-size:0.9rem;"><strong>光型</strong><br>AI时代</p>
+                <div class="card" style="flex:1;text-align:center;padding:30px 20px;background:linear-gradient(135deg,rgba(102,126,234,0.15) 0%,rgba(118,75,162,0.15) 100%);border:2px solid rgba(102,126,234,0.3);">
+                    <p style="font-size:2.5rem;margin-bottom:15px;">✨</p>
+                    <p style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:1.3rem;">光型</p>
+                    <p style="color:#667eea;font-size:0.85rem;margin-top:5px;font-weight:500;">AI时代</p>
                 </div>
             </div>
             <div class="card card-kongming">
-                <p><strong style="color:#27ae60;">✓ 要：</strong>热爱、嗅觉、hunger、判断力</p>
-                <p style="margin-top:12px;"><strong style="color:#e74c3c;">✗ 不要：</strong>只会执行、拒绝进化、被动等待</p>
+                <div style="display:flex;gap:40px;">
+                    <div style="flex:1;">
+                        <p style="color:#38a169;font-weight:600;margin-bottom:12px;">✓ 我们需要</p>
+                        <p style="color:#4a5568;">热爱 · 嗅觉 · hunger · 判断力</p>
+                    </div>
+                    <div style="flex:1;">
+                        <p style="color:#e53e3e;font-weight:600;margin-bottom:12px;">✗ 我们不要</p>
+                        <p style="color:#4a5568;">只会执行 · 拒绝进化 · 被动等待</p>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="slide">
             <h2>组织形态升级</h2>
-            <div class="card card-blue">
-                <h3>数字员工计划</h3>
-                <p>即插即用的Agent群组，提升全员AI素养</p>
+            <div style="display:flex;gap:20px;max-width:1000px;width:100%;">
+                <div class="card card-blue" style="flex:1;">
+                    <h3>数字员工计划</h3>
+                    <p>即插即用的Agent群组</p>
+                </div>
+                <div class="card card-green" style="flex:1;">
+                    <h3>一人即组织</h3>
+                    <p>鼓励光型人才创新</p>
+                </div>
+                <div class="card card-gold" style="flex:1;">
+                    <h3>分级投资体系</h3>
+                    <p>天使 → A → B → C轮</p>
+                </div>
             </div>
-            <div class="card card-green">
-                <h3>一人即组织</h3>
-                <p>鼓励光型人才开发AI原生应用</p>
-            </div>
-            <div class="card card-gold">
-                <h3>项目分级投资体系</h3>
-                <p>天使 → A轮 → B轮 → C轮，动态评估资源注入</p>
-            </div>
-            <p style="color:#8e7cc3;margin-top:30px;font-size:1.1rem;">数字员工 + 光型人才 + 融资体系 = FY27从规划到现实</p>
+            <p style="margin-top:35px;font-size:1.2rem;font-weight:600;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">数字员工 + 光型人才 + 融资体系 = FY27从规划到现实</p>
         </div>
     </div>
     
