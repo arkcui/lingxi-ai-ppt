@@ -62,6 +62,7 @@
         .card-purple { border-left: 4px solid #9C27B0; background: #f3e5f5; }
         .card-green { border-left: 4px solid #4CAF50; background: #f1f8e9; }
         .card-gold { border-left: 4px solid #FFD700; background: #fff8e1; }
+        .card-kongming { border-left: 4px solid #673AB7; background: #EDE7F6; }
         h3 {
             color: #333;
             font-size: 1.1rem;
@@ -172,6 +173,22 @@
             font-size: 0.75rem;
             margin-left: 8px;
         }
+        .kongming-tag {
+            display: inline-block;
+            background: #673AB7;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+        .talent-card {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #FF9800;
+        }
     </style>
 </head>
 <body>
@@ -195,6 +212,10 @@
             </div>
             <div class="agenda-item">
                 <span class="agenda-num">④</span>
+                <span>AI时代的光型人才</span>
+            </div>
+            <div class="agenda-item">
+                <span class="agenda-num">⑤</span>
                 <span>组织形态升级的探索目标</span>
             </div>
         </div>
@@ -203,9 +224,13 @@
             <p>🎯 <strong>核心主题：</strong>从平台业务到AI原生应用的全面转型</p>
             <p style="margin-top: 10px;">⏰ <strong>FY27目标：</strong>打造游戏垂类ASI</p>
         </div>
+        
+        <div class="card card-kongming" style="margin-top: 20px;">
+            <p style="text-align: center; color: #673AB7;">🦊 <strong>数字员工一号 · 孔明</strong> 已就位，全程参与FY27规划</p>
+        </div>
     </div>
 
-    <!-- Slide 2: 浙大校招复盘（深度版） -->
+    <!-- Slide 2: 浙大校招复盘 -->
     <div class="slide">
         <span class="page-tag">第一页</span>
         <h2>🔥 浙大校招：为什么这场打动了人</h2>
@@ -230,14 +255,15 @@
             </ul>
         </div>
         
-        <div class="card" style="border-left: 4px solid #FFD700; background: #fff8e1;">
-            <h3>🏆 核心启示</h3>
-            <p><strong>最好的校招不是"抢人"，是"召集同类"</strong></p>
-            <p style="margin-top: 8px; color: #666;">当业务方向足够清晰、表达足够真诚、愿景足够有张力时，优秀人才是愿意被真正打动的。</p>
+        <div class="card card-kongming">
+            <h3>🦊 孔明观察 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>这场校招的成功，<strong>本质上是"真诚打败了套路"</strong>。</p>
+            <p style="margin-top: 10px;">在AI时代，<strong>最稀缺的不再是信息，而是判断力与热爱</strong>。</p>
+            <p style="margin-top: 10px; color: #666;">FY27的AI原生团队建设，也要延续这个逻辑：找真正热爱游戏、相信AI的人，给足空间，一起定义未来。</p>
         </div>
     </div>
 
-    <!-- Slide 3: FY27核心考核指标（突出指标，简化节奏） -->
+    <!-- Slide 3: FY27核心考核指标 -->
     <div class="slide">
         <span class="page-tag">第二页</span>
         <h2>🎯 FY27核心考核指标</h2>
@@ -259,12 +285,19 @@
             
             <div class="card card-purple">
                 <strong style="font-size: 1.2rem;">⚡ 组织战斗力</strong>
-                <p style="margin-top: 8px;"><strong>50%+</strong>员工用上AI工具，<strong>20%</strong>岗位完成细胞化改造</p>
+                <p style="margin-top: 8px;"><strong>80%</strong>同学运用AI工具提效</p>
                 <p style="color: #666; font-size: 0.9rem;">人均产出 × 创新速度 × 人才密度</p>
             </div>
         </div>
         
-        <div class="card" style="background: #f8f9fa;">
+        <div class="card card-kongming">
+            <h3>🦊 孔明判断 <span class="kongming-tag">数字员工一号</span></h3>
+            <p><strong>80%的AI工具渗透率</strong>不是终点，是起点。</p>
+            <p style="margin-top: 10px;">真正的挑战在于：如何让AI从"工具"变成"伙伴"，从"提效10%"变成"重新定义工作方式"。</p>
+            <p style="margin-top: 10px; color: #666;">建议设立"AI原生工作流创新奖"，鼓励大家探索人机协同的新范式。</p>
+        </div>
+        
+        <div class="card" style="background: #f8f9fa; margin-top: 15px;">
             <h3>⏰ FY27时间线</h3>
             <p><strong>2026 H1</strong>：打基础 → <strong>2026 H2</strong>：见成效 → <strong>2027</strong>：上规模</p>
             <p style="margin-top: 8px; color: #666;">每个季度有关键里程碑，每半年有阶段成果验收</p>
@@ -283,19 +316,26 @@
             </div>
             <div class="pyramid-level pyramid-mid1">
                 🎯 垂直专业Agent<br>
-                <small>游戏攻略/交易顾问/阵容搭配 — 高专业度</small>
+                <small>分身攻略、AI交易顾问、AI攻略</small>
             </div>
             <div class="pyramid-level pyramid-mid2">
                 🌐 通用服务Agent<br>
-                <small>客服/推荐/社区 — 中等门槛</small>
+                <small>游戏工具、游戏社区</small>
             </div>
             <div class="pyramid-level pyramid-base">
                 📱 广泛入口Agent<br>
-                <small>资讯/搜索/提醒 — 低门槛、广覆盖</small>
+                <small>AI-GameID、AI游戏搜索、AI游戏资讯</small>
             </div>
         </div>
         
-        <div class="card" style="background: #f5f5f5;">
+        <div class="card card-kongming">
+            <h3>🦊 孔明设计思路 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>这个金字塔的本质是<strong>"从高频低门槛，到低频高价值"</strong>。</p>
+            <p style="margin-top: 10px;">底层Agent解决"用户怎么找到我们"，上层Agent解决"用户为什么离不开我们"。</p>
+            <p style="margin-top: 10px; color: #666;">建议：底层快速铺开抢入口，上层精雕细琢建壁垒，最终整合成ASI超级入口。</p>
+        </div>
+        
+        <div class="card" style="background: #f5f5f5; margin-top: 15px;">
             <h3>🤝 三方协同打造</h3>
             <div class="collab-section">
                 <div class="collab-box collab-front">
@@ -315,17 +355,60 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Slide 5: AI时代的光型人才 (NEW) -->
+    <div class="slide">
+        <span class="page-tag">第四页</span>
+        <h2>💡 AI时代的光型人才</h2>
         
-        <div class="card card-purple">
-            <h3>📈 演进路径</h3>
-            <p><strong>前期</strong>：成熟前台业务为独立Agent提供入口与交互</p>
-            <p style="margin-top: 10px;"><strong>中后期</strong>：整合所有Agent，打造独立ASI产品（金字塔顶端）</p>
+        <div class="card" style="background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 4px solid #FF9800;">
+            <h3>🌟 什么是光型人才？</h3>
+            <p>在AI时代，<strong>光型人才</strong>是指那些能够：</p>
+            <ul style="margin-top: 10px;">
+                <li><strong>穿透信息迷雾</strong> — 在AI生成的海量信息中，快速识别价值</li>
+                <li><strong>连接人与AI</strong> — 既懂业务又懂AI，成为人机协作的翻译者</li>
+                <li><strong>持续进化学习</strong> — 不是学一次用十年，而是终身学习、快速迭代</li>
+            </ul>
+        </div>
+        
+        <div class="talent-card">
+            <h3>⚡ 光型人才的核心能力</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                <div style="background: white; padding: 10px; border-radius: 8px;">
+                    <strong>判断力</strong><br>
+                    <small>AI给答案，人做选择</small>
+                </div>
+                <div style="background: white; padding: 10px; border-radius: 8px;">
+                    <strong>创造力</strong><br>
+                    <small>AI优化，人创造</small>
+                </div>
+                <div style="background: white; padding: 10px; border-radius: 8px;">
+                    <strong>连接力</strong><br>
+                    <small>跨领域整合资源</small>
+                </div>
+                <div style="background: white; padding: 10px; border-radius: 8px;">
+                    <strong>学习力</strong><br>
+                    <small>快速掌握新工具</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明招募标准 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>FY27我们要找的人，<strong>不是"会AI的人"，而是"像光一样的人"</strong>：</p>
+            <ul style="margin-top: 10px;">
+                <li>对游戏有真正的热爱（不是知道，是热爱）</li>
+                <li>对AI有敏锐的嗅觉（不是会用，是善用）</li>
+                <li>对创新有持续的 hunger（不是执行，是创造）</li>
+            </ul>
+            <p style="margin-top: 10px; color: #666;">这样的人，AI是放大器，不是替代者。</p>
         </div>
     </div>
 
-    <!-- Slide 5: 组织形态升级（改成融资轮次体系） -->
+    <!-- Slide 6: 组织形态升级 (原第四页) -->
     <div class="slide">
-        <span class="page-tag">第四页</span>
+        <span class="page-tag">第五页</span>
         <h2>⚡ 组织形态升级的探索目标</h2>
         
         <div class="card card-blue">
@@ -373,6 +456,12 @@
             <p style="margin-top: 15px; color: #666;">
                 <strong>核心原则：</strong>每个阶段评估项目生死，动态调整资源注入多少
             </p>
+        </div>
+        
+        <div class="card card-kongming">
+            <h3>🦊 孔明总结 <span class="kongming-tag">数字员工一号</span></h3>
+            <p>数字员工是<strong>基础设施</strong>，光型人才是<strong>核心资产</strong>，融资轮次体系是<strong>筛选机制</strong>。</p>
+            <p style="margin-top: 10px;">三者合一，才能让FY27从"规划"变成"现实"。</p>
         </div>
     </div>
 
