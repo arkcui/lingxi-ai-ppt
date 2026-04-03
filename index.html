@@ -61,6 +61,7 @@
         .card-blue { border-left: 4px solid #2196F3; background: #e3f2fd; }
         .card-purple { border-left: 4px solid #9C27B0; background: #f3e5f5; }
         .card-green { border-left: 4px solid #4CAF50; background: #f1f8e9; }
+        .card-gold { border-left: 4px solid #FFD700; background: #fff8e1; }
         h3 {
             color: #333;
             font-size: 1.1rem;
@@ -79,31 +80,12 @@
             position: absolute;
             left: 8px;
         }
-        .agenda-list {
-            background: white;
+        .highlight-box {
+            background: linear-gradient(135deg, #ffebee, #fff5f5);
+            border: 2px solid #ff2442;
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
-        .agenda-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-        .agenda-item:last-child { border-bottom: none; }
-        .agenda-num {
-            width: 28px;
-            height: 28px;
-            background: #ff2442;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            margin-right: 12px;
-            flex-shrink: 0;
+            padding: 15px;
+            margin: 15px 0;
         }
         .pyramid {
             display: flex;
@@ -155,6 +137,41 @@
             background: #333;
             color: white;
         }
+        .agenda-list {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        .agenda-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .agenda-item:last-child { border-bottom: none; }
+        .agenda-num {
+            width: 28px;
+            height: 28px;
+            background: #ff2442;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .xhs-badge {
+            display: inline-block;
+            background: #ff2442;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
     </style>
 </head>
 <body>
@@ -166,11 +183,11 @@
         <div class="agenda-list" style="margin-top: 20px;">
             <div class="agenda-item">
                 <span class="agenda-num">①</span>
-                <span>浙大校招复盘：得与失</span>
+                <span>浙大校招复盘：为什么这场打动了人</span>
             </div>
             <div class="agenda-item">
                 <span class="agenda-num">②</span>
-                <span>两年AI转型目标与节奏</span>
+                <span>FY27核心考核指标</span>
             </div>
             <div class="agenda-item">
                 <span class="agenda-num">③</span>
@@ -188,70 +205,73 @@
         </div>
     </div>
 
-    <!-- Slide 2: 浙大校招复盘 -->
+    <!-- Slide 2: 浙大校招复盘（深度版） -->
     <div class="slide">
         <span class="page-tag">第一页</span>
-        <h2>🔥 浙大校招复盘：得与失</h2>
+        <h2>🔥 浙大校招：为什么这场打动了人</h2>
+        
+        <div class="highlight-box">
+            <strong>💬 学生真实反馈</strong> <span class="xhs-badge">小红书热帖</span>
+            <p style="margin-top: 8px; color: #666;">"现场组织超棒！面试官特别热情专业！这才是我想加入的公司！"</p>
+        </div>
         
         <div class="card card-green">
-            <h3>✅ 得之所在（What Worked）</h3>
+            <h3>✨ 成功的三个底层逻辑</h3>
             <ul>
-                <li><strong>时代叙事打动人</strong><br>不讲岗位讲机会 → 学生感知到"参与时代级变革"</li>
-                <li><strong>热爱成为筛选器</strong><br>真玩家识别真玩家 → 当天发出5个Offer</li>
-                <li><strong>愿景张力足</strong><br>AI原生团队不是补位，是搭建新东西</li>
+                <li><strong>第一层：时代机会的召唤</strong><br>
+                不是"来打工"，是"参与AI重构游戏的历史进程"<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 顶尖人才要的是意义感，不是package</span></li>
+                <li><strong>第二层：热爱者的共鸣</strong><br>
+                面试官懂游戏、爱游戏 → 瞬间建立信任<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 真玩家识别真玩家，当天发出5个Offer</span></li>
+                <li><strong>第三层：共创者的邀请</strong><br>
+                不是"来填坑"，是"来搭建新东西"<br>
+                <span style="color: #888; font-size: 0.9rem;">→ 从"求职者"到"合伙人"的心态转变</span></li>
             </ul>
         </div>
         
-        <div class="card" style="border-left: 4px solid #FF9800; background: #fff3e0;">
-            <h3>⚠️ 失之改进（What to Improve）</h3>
-            <ul>
-                <li><strong>后续承接速度</strong><br>现场热度高，但24小时内建联效率可提升</li>
-                <li><strong>材料标准化与个性化的平衡</strong><br>保留业务判断，但需更结构化可复制</li>
-                <li><strong>校招知识库沉淀</strong><br>每场固定记录：Top5问题、最打动3个表达</li>
-            </ul>
+        <div class="card" style="border-left: 4px solid #FFD700; background: #fff8e1;">
+            <h3>🏆 核心启示</h3>
+            <p><strong>最好的校招不是"抢人"，是"召集同类"</strong></p>
+            <p style="margin-top: 8px; color: #666;">当业务方向足够清晰、表达足够真诚、愿景足够有张力时，优秀人才是愿意被真正打动的。</p>
         </div>
     </div>
 
-    <!-- Slide 3: 两年AI转型目标 -->
+    <!-- Slide 3: FY27核心考核指标（突出指标，简化节奏） -->
     <div class="slide">
         <span class="page-tag">第二页</span>
-        <h2>🎯 两年AI转型目标与节奏</h2>
+        <h2>🎯 FY27核心考核指标</h2>
         
-        <h3 style="margin-bottom: 15px;">核心检验指标（三大支柱）</h3>
+        <h3 style="margin-bottom: 15px;">三大必赢之战</h3>
         
         <div style="display: grid; gap: 12px; margin-bottom: 20px;">
             <div class="card card-green">
-                <strong>🏆 支柱一：AI原生应用</strong><br>
-                规模与影响力 — 从0到1打造行业影响力AI产品
+                <strong style="font-size: 1.2rem;">🏆 AI原生应用</strong>
+                <p style="margin-top: 8px;">打造<strong>2-3个</strong>有行业影响力的AI产品</p>
+                <p style="color: #666; font-size: 0.9rem;">用户规模 × 产品口碑 × 技术壁垒</p>
             </div>
+            
             <div class="card card-blue">
-                <strong>💼 支柱二：前台业务</strong><br>
-                经营与市场竞争力 — 九游、交易猫、biubiu AI赋能增长
+                <strong style="font-size: 1.2rem;">💼 前台业务增长</strong>
+                <p style="margin-top: 8px;">九游、交易猫、biubiu <strong>AI赋能提效30%+</strong></p>
+                <p style="color: #666; font-size: 0.9rem;">经营质量 × 市场竞争力 × 用户满意度</p>
             </div>
+            
             <div class="card card-purple">
-                <strong>⚡ 支柱三：组织迭代</strong><br>
-                战斗力与效率 — 细胞式组织、数字员工、人机协同
+                <strong style="font-size: 1.2rem;">⚡ 组织战斗力</strong>
+                <p style="margin-top: 8px;"><strong>50%+</strong>员工用上AI工具，<strong>20%</strong>岗位完成细胞化改造</p>
+                <p style="color: #666; font-size: 0.9rem;">人均产出 × 创新速度 × 人才密度</p>
             </div>
         </div>
         
-        <h3 style="margin: 25px 0 15px;">⏰ 节奏规划</h3>
-        <div style="display: grid; gap: 12px;">
-            <div class="card card-blue">
-                <strong>Phase 1（2026 H1）</strong><br>
-                AI工具渗透全员 → 数字员工MVP → 细胞组织试点
-            </div>
-            <div class="card card-blue">
-                <strong>Phase 2（2026 H2）</strong><br>
-                AI原生产品1.0 → 前台业务AI化 → 组织形态升级
-            </div>
-            <div class="card card-blue">
-                <strong>Phase 3（2027）</strong><br>
-                规模化与影响力 → 行业标杆确立 → ASI路径清晰
-            </div>
+        <div class="card" style="background: #f8f9fa;">
+            <h3>⏰ FY27时间线</h3>
+            <p><strong>2026 H1</strong>：打基础 → <strong>2026 H2</strong>：见成效 → <strong>2027</strong>：上规模</p>
+            <p style="margin-top: 8px; color: #666;">每个季度有关键里程碑，每半年有阶段成果验收</p>
         </div>
     </div>
 
-    <!-- Slide 4: 平台业务ASI的实现路径（新版金字塔） -->
+    <!-- Slide 4: 平台业务ASI的实现路径 -->
     <div class="slide">
         <span class="page-tag">第三页</span>
         <h2>🚀 平台业务ASI的实现路径</h2>
@@ -286,7 +306,7 @@
                 <div class="collab-box collab-ai">
                     <strong>🤖 AI原生团队</strong><br>
                     2026.3.20成立<br>
-                    <small>核心引擎研发</small>
+                    <small>AI原生应用开发</small>
                 </div>
                 <div class="collab-box collab-mid">
                     <strong>⚙️ 中台业务</strong><br>
@@ -298,12 +318,12 @@
         
         <div class="card card-purple">
             <h3>📈 演进路径</h3>
-            <p><strong>前期</strong>：成熟前台业务（九游/交易猫/biubiu）为独立Agent提供入口与交互</p>
+            <p><strong>前期</strong>：成熟前台业务为独立Agent提供入口与交互</p>
             <p style="margin-top: 10px;"><strong>中后期</strong>：整合所有Agent，打造独立ASI产品（金字塔顶端）</p>
         </div>
     </div>
 
-    <!-- Slide 5: 组织形态升级的探索目标（新版） -->
+    <!-- Slide 5: 组织形态升级（改成融资轮次体系） -->
     <div class="slide">
         <span class="page-tag">第四页</span>
         <h2>⚡ 组织形态升级的探索目标</h2>
@@ -327,18 +347,32 @@
             </ul>
         </div>
         
-        <div class="card" style="border-left: 4px solid #FF9800; background: #fff8e1;">
-            <h3>💡 目标三：预期效果</h3>
+        <div class="card card-gold">
+            <h3>💡 目标三：项目分级投资体系</h3>
+            <p>参考创业公司融资逻辑，建立项目分级评估与资源注入机制</p>
             
-            <p style="margin-bottom: 10px;"><strong>颠覆性改变产品开发流程：</strong></p>
-            <p>想法 → Demo → MVA 版本的时间和成本大幅下降</p>
+            <div style="margin-top: 15px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <div style="background: #e8f5e9; padding: 10px; border-radius: 8px;">
+                    <strong>🌱 天使轮</strong><br>
+                    <small>想法验证期<br>小额资源试水</small>
+                </div>
+                <div style="background: #e3f2fd; padding: 10px; border-radius: 8px;">
+                    <strong>📈 A轮</strong><br>
+                    <small>MVP验证期<br>匹配专项资源</small>
+                </div>
+                <div style="background: #f3e5f5; padding: 10px; border-radius: 8px;">
+                    <strong>🚀 B轮</strong><br>
+                    <small>规模化扩张<br>中台全面支持</small>
+                </div>
+                <div style="background: #fff3e0; padding: 10px; border-radius: 8px;">
+                    <strong>👑 C轮</strong><br>
+                    <small>行业标杆确立<br>战略级资源配置</small>
+                </div>
+            </div>
             
-            <p style="margin-top: 15px; margin-bottom: 10px;"><strong>中台动态支持机制：</strong></p>
-            <ul>
-                <li>技术中台：根据产品阶段评估技术可行性</li>
-                <li>市场中台：匹配推广资源与获客策略</li>
-                <li>用增中台：配置增长资源与运营支持</li>
-            </ul>
+            <p style="margin-top: 15px; color: #666;">
+                <strong>核心原则：</strong>每个阶段评估项目生死，动态调整资源注入多少
+            </p>
         </div>
     </div>
 
