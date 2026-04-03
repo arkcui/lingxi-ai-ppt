@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>灵犀互娱 · AI转型启动会</title>
+    <title>灵犀互娱平台业务FY27规划分享会</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
             background: #f5f5f5;
             line-height: 1.6;
             color: #333;
@@ -25,12 +21,8 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        .slide:nth-child(odd) {
-            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
-        }
-        .slide:nth-child(even) {
-            background: linear-gradient(135deg, #f5f8ff 0%, #fff 100%);
-        }
+        .slide:nth-child(odd) { background: linear-gradient(135deg, #fff5f5 0%, #fff 100%); }
+        .slide:nth-child(even) { background: linear-gradient(135deg, #f5f8ff 0%, #fff 100%); }
         h1 {
             color: #ff2442;
             font-size: 2rem;
@@ -66,43 +58,15 @@
             margin-bottom: 15px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        .card-success {
-            border-left: 4px solid #4CAF50;
-            background: #f1f8e9;
-        }
-        .card-warning {
-            border-left: 4px solid #FF9800;
-            background: #fff3e0;
-        }
-        .card-highlight {
-            border-left: 4px solid #F44336;
-            background: #ffebee;
-        }
-        .card-blue {
-            border-left: 4px solid #2196F3;
-            background: #e3f2fd;
-        }
-        .card-purple {
-            border-left: 4px solid #9C27B0;
-            background: #f3e5f5;
-        }
-        .card-yellow {
-            border-left: 4px solid #FFC107;
-            background: #fff8e1;
-        }
-        .card-indigo {
-            border-left: 4px solid #3F51B5;
-            background: #e8eaf6;
-        }
+        .card-blue { border-left: 4px solid #2196F3; background: #e3f2fd; }
+        .card-purple { border-left: 4px solid #9C27B0; background: #f3e5f5; }
+        .card-green { border-left: 4px solid #4CAF50; background: #f1f8e9; }
         h3 {
             color: #333;
             font-size: 1.1rem;
             margin-bottom: 12px;
         }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
+        ul { list-style: none; padding-left: 0; }
         li {
             padding: 8px 0;
             padding-left: 24px;
@@ -114,113 +78,6 @@
             font-weight: bold;
             position: absolute;
             left: 8px;
-        }
-        .pillars {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        @media (min-width: 600px) {
-            .pillars {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .pillar {
-            background: white;
-            border-radius: 12px;
-            padding: 16px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .pillar-icon {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-        .pillar-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .pillar-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
-        }
-        .pillar-desc {
-            font-size: 0.85rem;
-            color: #888;
-        }
-        .timeline {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        @media (min-width: 600px) {
-            .timeline {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .phase {
-            background: white;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .phase-title {
-            font-weight: bold;
-            color: #2196F3;
-            margin-bottom: 10px;
-        }
-        .goals {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        @media (min-width: 600px) {
-            .goals {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .directions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        @media (min-width: 600px) {
-            .directions {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        .direction {
-            background: white;
-            border-radius: 10px;
-            padding: 14px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .collab {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        @media (min-width: 600px) {
-            .collab {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .collab-item {
-            border-radius: 12px;
-            padding: 16px;
-            text-align: center;
-        }
-        .collab-item:nth-child(1) { background: #e0f2f1; }
-        .collab-item:nth-child(2) { background: #fce4ec; }
-        .collab-item:nth-child(3) { background: #e8f5e9; }
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background: #333;
-            color: white;
         }
         .agenda-list {
             background: white;
@@ -234,9 +91,7 @@
             display: flex;
             align-items: center;
         }
-        .agenda-item:last-child {
-            border-bottom: none;
-        }
+        .agenda-item:last-child { border-bottom: none; }
         .agenda-num {
             width: 28px;
             height: 28px;
@@ -250,16 +105,63 @@
             margin-right: 12px;
             flex-shrink: 0;
         }
-        strong {
-            color: #333;
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        .pyramid-level {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+        .pyramid-top {
+            background: linear-gradient(135deg, #ff2442, #d32f2f);
+            width: 40%;
+        }
+        .pyramid-mid1 {
+            background: linear-gradient(135deg, #9C27B0, #7B1FA2);
+            width: 60%;
+        }
+        .pyramid-mid2 {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            width: 80%;
+        }
+        .pyramid-base {
+            background: linear-gradient(135deg, #4CAF50, #388E3C);
+            width: 100%;
+        }
+        .collab-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .collab-box {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .collab-front { background: #e8f5e9; }
+        .collab-ai { background: #fce4ec; }
+        .collab-mid { background: #e3f2fd; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
     <!-- Slide 1: 封面 -->
     <div class="slide">
-        <h1>✨ 灵犀互娱 · AI转型启动会 ✨</h1>
-        <p class="subtitle">2026年度核心团队战略共识会</p>
+        <h1>✨ 灵犀互娱平台业务 ✨</h1>
+        <p class="subtitle">FY27规划分享会</p>
         
         <div class="agenda-list" style="margin-top: 20px;">
             <div class="agenda-item">
@@ -272,17 +174,17 @@
             </div>
             <div class="agenda-item">
                 <span class="agenda-num">③</span>
-                <span>AI原生团队：目标与建设</span>
+                <span>平台业务ASI的实现路径</span>
             </div>
             <div class="agenda-item">
                 <span class="agenda-num">④</span>
-                <span>终极愿景：游戏垂类ASI</span>
+                <span>组织形态升级的探索目标</span>
             </div>
         </div>
         
         <div style="text-align: center; margin-top: 30px; color: #666;">
             <p>🎯 <strong>核心主题：</strong>从平台业务到AI原生应用的全面转型</p>
-            <p style="margin-top: 10px;">⏰ <strong>时间窗口：</strong>未来两年，打造游戏垂类ASI</p>
+            <p style="margin-top: 10px;">⏰ <strong>FY27目标：</strong>打造游戏垂类ASI</p>
         </div>
     </div>
 
@@ -291,7 +193,7 @@
         <span class="page-tag">第一页</span>
         <h2>🔥 浙大校招复盘：得与失</h2>
         
-        <div class="card card-success">
+        <div class="card card-green">
             <h3>✅ 得之所在（What Worked）</h3>
             <ul>
                 <li><strong>时代叙事打动人</strong><br>不讲岗位讲机会 → 学生感知到"参与时代级变革"</li>
@@ -300,7 +202,7 @@
             </ul>
         </div>
         
-        <div class="card card-warning">
+        <div class="card" style="border-left: 4px solid #FF9800; background: #fff3e0;">
             <h3>⚠️ 失之改进（What to Improve）</h3>
             <ul>
                 <li><strong>后续承接速度</strong><br>现场热度高，但24小时内建联效率可提升</li>
@@ -316,162 +218,133 @@
         <h2>🎯 两年AI转型目标与节奏</h2>
         
         <h3 style="margin-bottom: 15px;">核心检验指标（三大支柱）</h3>
-        <div class="pillars">
-            <div class="pillar">
-                <div class="pillar-icon">🏆</div>
-                <div class="pillar-title">支柱一</div>
-                <div class="pillar-subtitle">AI原生应用<br>规模与影响力</div>
-                <div class="pillar-desc">从0到1打造有行业影响力的AI原生产品</div>
+        
+        <div style="display: grid; gap: 12px; margin-bottom: 20px;">
+            <div class="card card-green">
+                <strong>🏆 支柱一：AI原生应用</strong><br>
+                规模与影响力 — 从0到1打造行业影响力AI产品
             </div>
-            <div class="pillar">
-                <div class="pillar-icon">💼</div>
-                <div class="pillar-title">支柱二</div>
-                <div class="pillar-subtitle">前台业务<br>经营与市场竞争力</div>
-                <div class="pillar-desc">九游、交易猫、biubiu AI赋能下的增长</div>
+            <div class="card card-blue">
+                <strong>💼 支柱二：前台业务</strong><br>
+                经营与市场竞争力 — 九游、交易猫、biubiu AI赋能增长
             </div>
-            <div class="pillar">
-                <div class="pillar-icon">⚡</div>
-                <div class="pillar-title">支柱三</div>
-                <div class="pillar-subtitle">组织迭代<br>战斗力与效率</div>
-                <div class="pillar-desc">细胞式组织、数字员工计划</div>
+            <div class="card card-purple">
+                <strong>⚡ 支柱三：组织迭代</strong><br>
+                战斗力与效率 — 细胞式组织、数字员工、人机协同
             </div>
         </div>
         
         <h3 style="margin: 25px 0 15px;">⏰ 节奏规划</h3>
-        <div class="timeline">
-            <div class="phase card-blue">
-                <div class="phase-title">Phase 1（2026 H1）</div>
-                <ul>
-                    <li>AI工具渗透全员</li>
-                    <li>数字员工MVP上线</li>
-                    <li>细胞组织试点</li>
-                </ul>
+        <div style="display: grid; gap: 12px;">
+            <div class="card card-blue">
+                <strong>Phase 1（2026 H1）</strong><br>
+                AI工具渗透全员 → 数字员工MVP → 细胞组织试点
             </div>
-            <div class="phase card-blue">
-                <div class="phase-title">Phase 2（2026 H2）</div>
-                <ul>
-                    <li>AI原生产品1.0发布</li>
-                    <li>前台业务AI化改造</li>
-                    <li>组织形态升级</li>
-                </ul>
+            <div class="card card-blue">
+                <strong>Phase 2（2026 H2）</strong><br>
+                AI原生产品1.0 → 前台业务AI化 → 组织形态升级
             </div>
-            <div class="phase card-blue">
-                <div class="phase-title">Phase 3（2027）</div>
-                <ul>
-                    <li>规模化与影响力</li>
-                    <li>行业标杆确立</li>
-                    <li>ASI路径清晰</li>
-                </ul>
+            <div class="card card-blue">
+                <strong>Phase 3（2027）</strong><br>
+                规模化与影响力 → 行业标杆确立 → ASI路径清晰
             </div>
         </div>
     </div>
 
-    <!-- Slide 4: AI原生团队 -->
+    <!-- Slide 4: 平台业务ASI的实现路径（新版金字塔） -->
     <div class="slide">
         <span class="page-tag">第三页</span>
-        <h2>🚀 AI原生团队：目标与建设</h2>
+        <h2>🚀 平台业务ASI的实现路径</h2>
         
-        <h3 style="margin-bottom: 15px;">🎯 团队目标</h3>
-        <div class="goals">
-            <div class="phase card-yellow">
-                <div class="phase-title">短期（6个月）</div>
-                <ul>
-                    <li>组建15-20人精英团队</li>
-                    <li>完成2-3个AI场景验证</li>
-                    <li>建立AI基础设施中台</li>
-                </ul>
+        <div class="pyramid">
+            <div class="pyramid-level pyramid-top">
+                🔺 ASI（超级智能整合）<br>
+                <small>独立产品形态</small>
             </div>
-            <div class="phase card-yellow">
-                <div class="phase-title">中期（12个月）</div>
-                <ul>
-                    <li>AI原生产品1.0上线</li>
-                    <li>用户规模突破百万</li>
-                    <li>形成可复制方法论</li>
-                </ul>
+            <div class="pyramid-level pyramid-mid1">
+                🎯 垂直专业Agent<br>
+                <small>游戏攻略/交易顾问/阵容搭配 — 高专业度</small>
             </div>
-            <div class="phase card-yellow">
-                <div class="phase-title">长期（24个月）</div>
-                <ul>
-                    <li>游戏垂类ASI雏形</li>
-                    <li>行业影响力确立</li>
-                    <li>商业模式验证</li>
-                </ul>
+            <div class="pyramid-level pyramid-mid2">
+                🌐 通用服务Agent<br>
+                <small>客服/推荐/社区 — 中等门槛</small>
+            </div>
+            <div class="pyramid-level pyramid-base">
+                📱 广泛入口Agent<br>
+                <small>资讯/搜索/提醒 — 低门槛、广覆盖</small>
             </div>
         </div>
         
-        <h3 style="margin: 25px 0 15px;">💡 业务思考方向</h3>
-        <div class="directions">
-            <div class="direction card-indigo">
-                <strong>方向一</strong><br>AI游戏军师<br>跨游戏超级助手
+        <div class="card" style="background: #f5f5f5;">
+            <h3>🤝 三方协同打造</h3>
+            <div class="collab-section">
+                <div class="collab-box collab-front">
+                    <strong>🎮 前台业务</strong><br>
+                    九游/交易猫/biubiu<br>
+                    <small>前期：提供入口与交互</small>
+                </div>
+                <div class="collab-box collab-ai">
+                    <strong>🤖 AI原生团队</strong><br>
+                    2026.3.20成立<br>
+                    <small>核心引擎研发</small>
+                </div>
+                <div class="collab-box collab-mid">
+                    <strong>⚙️ 中台业务</strong><br>
+                    市场/技术/用增<br>
+                    <small>基础设施支持</small>
+                </div>
             </div>
-            <div class="direction card-indigo">
-                <strong>方向二</strong><br>AI交易军师<br>交易猫升级
-            </div>
-            <div class="direction card-indigo">
-                <strong>方向三</strong><br>AI内容工厂<br>九游UGC赋能
-            </div>
-            <div class="direction card-indigo">
-                <strong>方向四</strong><br>数字员工<br>组织效率革命
-            </div>
+        </div>
+        
+        <div class="card card-purple">
+            <h3>📈 演进路径</h3>
+            <p><strong>前期</strong>：成熟前台业务（九游/交易猫/biubiu）为独立Agent提供入口与交互</p>
+            <p style="margin-top: 10px;"><strong>中后期</strong>：整合所有Agent，打造独立ASI产品（金字塔顶端）</p>
         </div>
     </div>
 
-    <!-- Slide 5: 终极愿景 -->
+    <!-- Slide 5: 组织形态升级的探索目标（新版） -->
     <div class="slide">
         <span class="page-tag">第四页</span>
-        <h2>🌟 终极愿景：游戏垂类ASI</h2>
+        <h2>⚡ 组织形态升级的探索目标</h2>
         
-        <div class="card card-highlight">
-            <h3>🎯 什么是游戏垂类ASI？</h3>
-            <p style="margin-bottom: 10px;"><strong>ASI = Artificial Super Intelligence</strong></p>
-            <p style="margin-bottom: 10px;">在游戏领域，这意味着：</p>
-            <ul>
-                <li><strong>全知</strong>：懂每一款游戏、每一个玩家、每一个市场动态</li>
-                <li><strong>全能</strong>：能陪玩、能攻略、能交易、能创作</li>
-                <li><strong>全时</strong>：7×24h不间断服务，超越人类极限</li>
-                <li><strong>全链</strong>：贯穿游戏前中后的完整生命周期</li>
+        <div class="card card-blue">
+            <h3>🎯 目标一：数字员工计划</h3>
+            <p>基于AI时代光型人才要求，由<strong>中台联手</strong>共同开发数字员工计划</p>
+            <ul style="margin-top: 10px;">
+                <li>为在岗及新人提供<strong>即插即用</strong>的咨询、分析类服务Agent群组</li>
+                <li>降低专业门槛，提升全员AI素养与工作效率</li>
             </ul>
         </div>
         
-        <h3 style="margin: 20px 0 15px;">🤝 三方合力模型</h3>
-        <div class="collab">
-            <div class="collab-item">
-                <strong>🎮 前台业务</strong><br>
-                九游/交易猫/biubiu<br><br>
-                提供场景、数据、用户反馈
-            </div>
-            <div class="collab-item">
-                <strong>🤖 AI原生团队</strong><br>
-                核心引擎<br><br>
-                技术研发、产品创新、AI能力
-            </div>
-            <div class="collab-item">
-                <strong>⚙️ 中台</strong><br>
-                基础设施<br><br>
-                AI平台、数据、算力支持
-            </div>
+        <div class="card card-green">
+            <h3>🚀 目标二：一人即组织</h3>
+            <p>朝着<strong>"一人即组织"</strong>的形态演进</p>
+            <ul style="margin-top: 10px;">
+                <li>鼓励光型人才打开想象力</li>
+                <li>开发更多游戏垂类AI原生应用</li>
+                <li>个体创造力 × AI工具 = 无限可能</li>
+            </ul>
         </div>
         
-        <div class="card card-purple" style="margin-top: 20px;">
-            <h3>💪 两年窗口期行动纲领</h3>
-            <p style="margin-bottom: 10px;"><strong>2026：打基础、建能力</strong></p>
-            <ul style="margin-bottom: 15px;">
-                <li>✓ 细胞组织全面落地</li>
-                <li>✓ 数字员工全员覆盖</li>
-                <li>✓ AI原生产品1.0发布</li>
-            </ul>
-            <p style="margin-bottom: 10px;"><strong>2027：上规模、树标杆</strong></p>
+        <div class="card" style="border-left: 4px solid #FF9800; background: #fff8e1;">
+            <h3>💡 目标三：预期效果</h3>
+            
+            <p style="margin-bottom: 10px;"><strong>颠覆性改变产品开发流程：</strong></p>
+            <p>想法 → Demo → MVA 版本的时间和成本大幅下降</p>
+            
+            <p style="margin-top: 15px; margin-bottom: 10px;"><strong>中台动态支持机制：</strong></p>
             <ul>
-                <li>✓ 千万级用户AI产品</li>
-                <li>✓ 行业影响力确立</li>
-                <li>✓ ASI雏形显现</li>
+                <li>技术中台：根据产品阶段评估技术可行性</li>
+                <li>市场中台：匹配推广资源与获客策略</li>
+                <li>用增中台：配置增长资源与运营支持</li>
             </ul>
         </div>
     </div>
 
     <div class="footer">
-        <p style="font-size: 1.2rem; margin-bottom: 10px;">🔥 两年窗口期，一起打造游戏垂类ASI！ 🔥</p>
-        <p>灵犀互娱 · 2026年度启动会</p>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">🔥 FY27，一起打造游戏垂类ASI！ 🔥</p>
+        <p>灵犀互娱平台业务 · FY27规划分享会</p>
     </div>
 </body>
 </html>
